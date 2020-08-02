@@ -19,3 +19,7 @@ The default settings for my purposes are as follows, but they are easily editabl
 * Download 100 images per run
 * Classify images as child (under 20), young adult (under 30), adult (under 50) or older (50+)
 * Ignore images of children
+
+## Reliance and credit
+
+This entirely relies on the work of thispersondoesnotexist.com and py-agender. You should ensure that your use of this tool is within what is permitted by them.
