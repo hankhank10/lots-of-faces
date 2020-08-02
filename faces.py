@@ -12,7 +12,7 @@ url = "https://thispersondoesnotexist.com/image"
 male_threshold = 0.4
 female_threshold = 0.6
 temp_file = "img.jpg"
-times_to_run = 1000
+times_to_run = 100
 seconds_to_sleep = 1
 
 
