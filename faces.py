@@ -12,7 +12,7 @@ url = "https://thispersondoesnotexist.com/image"
 male_threshold = 0.4
 female_threshold = 0.6
 temp_file = "img.jpg"
-times_to_run = 500
+times_to_run = 100
 seconds_to_sleep = 1
 
 
@@ -43,7 +43,7 @@ def move_file(gender, age):
     if age < 20: category = "child"
 
     if category != "child":
-        location_to_move_to = gender + "/" + gender + "/" + category + "/" + gender + "_" + str(age) + "_" + secrets.token_hex(10) + ".jpg"
+        location_to_move_to = gender + "/" + "/" + category + "/" + gender + "_" + str(age) + "_" + secrets.token_hex(10) + ".jpg"
         shutil.move(temp_file, location_to_move_to)
     return
 
