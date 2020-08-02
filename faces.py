@@ -12,7 +12,7 @@ url = "https://thispersondoesnotexist.com/image"
 male_threshold = 0.4
 female_threshold = 0.6
 temp_file = "img.jpg"
-times_to_run = 100
+times_to_run = 1000
 seconds_to_sleep = 1
 
 
@@ -25,13 +25,18 @@ def download_face():
 
 def recoginise_face():
     faces = agender.detect_genders_ages(cv2.imread(temp_file))
-    face = faces[0]
-    gender_numeric = face['gender']
-    age = int(face['age'])
+    if len(faces) == 1:
+        face = faces[0]
+        gender_numeric = face['gender']
+        age = int(face['age'])
 
-    gender = "unclear"
-    if gender_numeric < male_threshold: gender = "male"
-    if gender_numeric > male_threshold: gender = "female"
+        gender = "unclear"
+        if gender_numeric < male_threshold: gender = "male"
+        if gender_numeric > male_threshold: gender = "female"
+    else:
+        #face not detected or multiple faces detected
+        gender = "unclear"
+        age = 0
 
     return gender, age
 
